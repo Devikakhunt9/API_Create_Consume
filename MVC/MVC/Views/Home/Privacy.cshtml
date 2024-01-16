@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+@* <h1>@ViewData["Title"]</h1> *@
+@model MVC.Models.UserModel;
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+    <form method="post" asp-controller="Home" asp-action="Save">
+<table>
+        <input asp-for="UserId" hidden />
+    <tr>
+        <td>User Name </td>
+        <td>:</td>
+        <td>
+            <input type="text" asp-for="UserName" />
+                <span asp-validation-for="UserName" ></span>
+        </td>
+    </tr>
+    <tr>
+        <td>User Email </td>
+        <td>:</td>
+        <td>
+            <input type="text" asp-for="UserEmail" />
+                <span asp-validation-for="UserEmail"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>User Contact </td>
+        <td>:</td>
+        <td>
+            <input type="text" asp-for="UserContact" />
+                <span asp-validation-for="UserContact"></span>
+        </td>
+    </tr>
+
+    </table>
+    <br /><br />
+    <button type="submit">Add</button>
+    </form>
+
